@@ -1,6 +1,48 @@
-2026-01-29 INFO User login successful
-2026-01-29 INFO User login successful
-2026-01-29 ERROR Database connection failed
-2026-01-29 WARN Disk usage high
-2026-01-29 INFO User logout
-2026-01-29 ERROR Database timeout after 5000ms
+2026-01-29T10:00:01Z INFO AuthService User login successful user_id=123
+2026-01-29T10:00:02Z INFO AuthService User login successful user_id=124
+2026-01-29T10:00:03Z INFO AuthService User login successful user_id=125
+2026-01-29T10:00:04Z WARN AuthService Failed login attempt user_id=126
+2026-01-29T10:00:05Z INFO AuthService User login successful user_id=127
+
+2026-01-29T10:01:10Z INFO PaymentService Payment initiated order_id=5001 amount=2499
+2026-01-29T10:01:11Z ERROR PaymentService Database connection failed timeout=3000
+2026-01-29T10:01:12Z ERROR PaymentService Database connection failed timeout=3000
+2026-01-29T10:01:13Z ERROR PaymentService Database connection failed timeout=3000
+2026-01-29T10:01:14Z INFO PaymentService Retrying database connection
+2026-01-29T10:01:16Z INFO PaymentService Payment completed order_id=5001
+
+2026-01-29T10:02:00Z INFO InventoryService Inventory check started product_id=9001
+2026-01-29T10:02:01Z INFO InventoryService Inventory available product_id=9001 quantity=42
+2026-01-29T10:02:02Z INFO InventoryService Inventory check started product_id=9002
+2026-01-29T10:02:03Z WARN InventoryService Low inventory product_id=9002 quantity=3
+2026-01-29T10:02:04Z WARN InventoryService Low inventory product_id=9002 quantity=3
+2026-01-29T10:02:05Z WARN InventoryService Low inventory product_id=9002 quantity=3
+
+2026-01-29T10:03:30Z INFO OrderService Order created order_id=7001 user_id=123
+2026-01-29T10:03:31Z INFO OrderService Order validated order_id=7001
+2026-01-29T10:03:32Z ERROR OrderService Failed to reserve inventory order_id=7001
+2026-01-29T10:03:33Z INFO OrderService Retrying inventory reservation
+2026-01-29T10:03:35Z INFO OrderService Inventory reserved order_id=7001
+
+2026-01-29T10:05:00Z INFO MetricsService CPU usage cpu=45%
+2026-01-29T10:05:01Z INFO MetricsService CPU usage cpu=46%
+2026-01-29T10:05:02Z INFO MetricsService CPU usage cpu=47%
+2026-01-29T10:05:03Z WARN MetricsService High CPU usage cpu=89%
+2026-01-29T10:05:04Z WARN MetricsService High CPU usage cpu=92%
+2026-01-29T10:05:05Z WARN MetricsService High CPU usage cpu=94%
+2026-01-29T10:05:06Z INFO MetricsService CPU usage normalized cpu=55%
+
+2026-01-29T10:06:10Z ERROR NotificationService Failed to send email user_id=123
+2026-01-29T10:06:11Z ERROR NotificationService Failed to send email user_id=124
+2026-01-29T10:06:12Z INFO NotificationService Email retry scheduled
+2026-01-29T10:06:20Z INFO NotificationService Email sent successfully user_id=123
+
+2026-01-29T10:07:45Z INFO Scheduler Job started job_id=cleanup
+2026-01-29T10:07:46Z INFO Scheduler Cleaning temporary files
+2026-01-29T10:07:47Z INFO Scheduler Cleaning temporary files
+2026-01-29T10:07:48Z INFO Scheduler Job completed job_id=cleanup
+
+2026-01-29T10:08:00Z WARN SecurityService Suspicious activity detected ip=192.168.1.10
+2026-01-29T10:08:01Z WARN SecurityService Suspicious activity detected ip=192.168.1.10
+2026-01-29T10:08:02Z WARN SecurityService Suspicious activity detected ip=192.168.1.10
+2026-01-29T10:08:10Z INFO SecurityService IP temporarily blocked ip=192.168.1.10
